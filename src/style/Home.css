@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.intro-section {
+    margin-top: 50px;
+}
+
+.intro-text {
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 25px;
+    padding: 20px;
+}
+
+.heading-text {
+    font-weight: 600;
+    /* font-size: 48px; */
+    line-height: 1.23;
+}
+
+.description-text {
+    padding-top: 60px;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.transfer-nft {
+    background: -webkit-linear-gradient(left, #12b89a, #35aee2);
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite;
+    border: 1px solid transparent;
+    top: 60%;
+    left: 100px;
+    /* position: absolute; */
+    border-radius: 12px;
+    margin: 15px;
+    height: 40px;
+    font-size: 15px;
+    width: 8rem;
+    color: white;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.transfer-address {
+    background: -webkit-linear-gradient(left, #12b89a, #35aee2);
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite;
+    border: 1px solid transparent;
+    top: 60%;
+    left: 100px;
+    /* position: absolute; */
+    border-radius: 12px;
+    margin: 15px;
+    height: 40px;
+    font-size: 15px;
+    width: 12rem;
+    color: white;
+    line-height: 32px;
+    cursor: pointer;
+}
