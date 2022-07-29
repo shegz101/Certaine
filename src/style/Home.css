@@ -18,6 +18,8 @@
 .heading-text {
     font-weight: 600;
     /* font-size: 48px; */
+    justify-content: center;
+    text-align: center;
     line-height: 1.23;
 }
 
