@@ -10,8 +10,16 @@
     /* position: fixed; */
 }
 
+.header__logo {
+    display: flex;
+    flex-direction: row;
+    margin-top: -12px;
+    margin-left: 30px;
+}
+
 .header-text {
     font-weight: 600;
+    padding-left: 20px;
     font-size: 20px;
     line-height: 1.4;
 }
