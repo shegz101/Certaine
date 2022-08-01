@@ -10,8 +10,8 @@ const Header = () => {
                 <h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px'}} className='header-text'>Certaine</h1>
             </div>
             <div className='button-grp'>
-                <button className='init-button'>Init Account</button>
-                <button className='connect-button'>Connect to Wallet</button>
+                <p className='log-button'>Log In</p>
+                <button className='sign-button'>Sign Up</button>
             </div>
         </div>
     )

@@ -27,7 +27,20 @@
 /* .button-grp {
     padding: 0 10px 0 10px;
 } */
-.init-button {
+.button-grp {
+    display: flex;
+    flex-direction: row;
+}
+
+.log-button {
+    color:white;
+    font-size: 20px;
+    padding-top: 6px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+/* .init-button {
     background: -webkit-linear-gradient(left, #60c657, #35aee2);
     background-size: 200% 200%;
     animation: gradient-animation 4s ease infinite;
@@ -39,18 +52,15 @@
     cursor: pointer;
     border-radius: 12px;
     margin-right: 10px;
-    /* margin: 10px;
-    right: 350px; */
-    /* position: absolute; */
-}
+} */
 
-.connect-button {
+.sign-button {
     background: -webkit-linear-gradient(left, #60c657, #35aee2);
     background-size: 200% 200%;
     animation: gradient-animation 4s ease infinite;
     height: 40px;
     font-size: 17px;
-    width: 11rem;
+    width: 8rem;
     color: white;
     line-height: 32px;
     cursor: pointer;
