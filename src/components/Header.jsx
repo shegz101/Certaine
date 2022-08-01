@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import logo from '../logo.jpg';
 import '../style/Header.css';
 
@@ -10,8 +11,8 @@ const Header = () => {
                 <h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px'}} className='header-text'>Certaine</h1>
             </div>
             <div className='button-grp'>
-                <p className='log-button'>Log In</p>
-                <button className='sign-button'>Sign Up</button>
+                <Link to="/login"><p className='log-button'>Log In</p></Link>
+                <Link to="/login"><button className='sign-button'>Sign Up</button></Link>
             </div>
         </div>
     )
