@@ -68,3 +68,17 @@
     line-height: 32px;
     cursor: pointer;
 }
+
+.upload__btn {
+    background: -webkit-linear-gradient(left, #60c657, #35aee2);
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite;
+    height: 38px;
+    font-size: 17px;
+    width: 8rem;
+    color: white;
+    cursor:pointer;
+    line-height: 32px;
+    border: 1px solid transparent;
+    border-radius: 13px;
+}
