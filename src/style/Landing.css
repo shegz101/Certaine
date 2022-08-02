@@ -1,0 +1,17 @@
+
+.main__landing__section {
+    display: flex;
+    flex-direction: row;
+    overflow-x:hidden;
+}
+
+.landing__text {
+    margin-top: 80px;
+    margin-left: 70px;  
+}
+
+.landing__image {
+    margin-left: 20px;
+    margin-right: 80px;
+    width: 100px;
+}

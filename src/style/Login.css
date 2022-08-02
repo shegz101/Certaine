@@ -1,0 +1,101 @@
+.login-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.login__image {
+    width: 50%;
+    height: 100vh;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ31a0mVKl169eXdxZq26NH9xCOER0oFWenSQ&usqp=CAU');
+    background-size: cover;
+    background-position: center center;
+}
+
+.login__input {
+    width: 50%;
+    height: 100vh;
+    margin-top: 60px;
+    text-align: center;
+    justify-content: center;
+    /* background-color: white; */
+}
+
+.sign__text {
+    color: white;
+    font-weight: 600;
+}
+
+.log__text {
+    color:hsla(0,0%,100%,.5);
+    padding-top: 20px;
+}
+
+.name__field {
+    height: 40px;
+    line-height: 4;
+    size: 50;
+    width: 400px;
+    margin-top: 40px;
+    text-decoration: none;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.email__field {
+    height: 40px;
+    line-height: 4;
+    size: 50;
+    width: 400px;
+    margin-top: 40px;
+    text-decoration: none;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+::placeholder {
+    color: black;
+}
+
+.password__field {
+    height: 40px;
+    width: 400px;
+    margin-top: 45px;
+    text-decoration: none;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.password__instruction {
+    margin-left: 140px;
+    color:hsla(0,0%,100%,.5);
+    font-size: 13px;
+    text-align: start;
+}
+
+.sign__btn {
+    height: 50px;
+    width: 400px;
+    margin-top: 45px;
+    color: hsla(0,0%,100%,.5);
+    font-weight: 600;
+    font-size: 30px;
+    background-color: #222b3d;
+    border: 1px solid transparent;
+    border-radius: 13px;
+}

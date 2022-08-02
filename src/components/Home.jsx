@@ -4,6 +4,8 @@ import { MdOutlineSendToMobile }from 'react-icons/md';
 import {AiOutlineWallet} from 'react-icons/ai';
 import {FaRegAddressCard} from 'react-icons/fa';
 import '../style/Home.css'
+import Header from './Header';
+import Footer from './Footer';
 
 const Home = (props) => {
     const hiddenFileInput = useRef(null);
@@ -16,6 +18,7 @@ const Home = (props) => {
     };
     return (
         <div className='intro-section'>
+            <Header/>
             <div className='intro-text'>
                 <h1 className='heading-text' style={{color:'white', fontSize:'38px', textAlign:'center', justifyContent:'center',}}>Web3 Certificate Builder built on Polygon Blockchain</h1>
                 <p classname='description-text' style={{color:'hsla(0,0%,100%,.5)', paddingTop:'40px',fontSize:'23px', textAlign:'center', justifyContent:'center',}}>Polygon tool designed to help Institutions and Business <p>to generate certificates on Polygon Blockchain!</p></p>
@@ -68,9 +71,9 @@ const Home = (props) => {
                     <div style={{backgroundColor:'#2a2c37', height:'200px', width: '400px', justifyContent:'center',borderRadius:'12px', marginLeft:'auto', marginRight:'auto', marginTop:'20px',marginBottom:'20px', textAlign:'center'}}>
                       <button className='transfer-address'><FaRegAddressCard/> Send To All Addresses</button>  
                     </div>
-                </div>
-                
+                </div>  
             </div>
+            <Footer/>
         </div>
     )
 }
