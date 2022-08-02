@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../style/Header.css';
 import { Link } from "react-router-dom";
 import logo from '../logo.jpg';
@@ -6,6 +8,7 @@ import land from '../landing.png';
 import '../style/Landing.css';
 
 const Landing = () => {
+    const notify = () => toast("Please sign up!");
     return (
         <div className='landing__page__section'>
             <div className='header-section'> 
@@ -15,6 +18,7 @@ const Landing = () => {
                </div>
                <div>
                   <Link to="/login"><button className='sign-button' style={{border:'1px solid transparent'}}>Sign In</button></Link>
+                  <ToastContainer />
                </div>
            </div>
 
@@ -24,7 +28,7 @@ const Landing = () => {
                   <p style={{color:'hsla(0,0%,100%,.5)', fontSize:'25px', width:'45%',}}>It takes seconds to upload certificate and create an NFT certificate on Certaine. Easily Connect your Wallet. Send NFT to any address.</p>
                   <>
                     <Link to="/login"><button className='sign-button' style={{marginTop:'20px',width:'8rem', border:'1px solid transparent'}}>Get Started</button></Link>
-                    <button className='sign-button' style={{marginTop:'20px', width:'8rem', marginLeft:'4rem', border:'1px solid transparent'}}>Explore</button>
+                    <button onClick={notify} className='sign-button' style={{marginTop:'20px', width:'8rem', marginLeft:'4rem', border:'1px solid transparent'}}>Explore</button>
                   </>
               </div>
               <div className='landing__image'>
