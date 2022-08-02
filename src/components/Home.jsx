@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import { FiUpload }from 'react-icons/fi';
-import { MdOutlineSendToMobile }from 'react-icons/md';
+import { MdOutlineSendToMobile } from 'react-icons/md';
 import {AiOutlineWallet} from 'react-icons/ai';
 import {FaRegAddressCard} from 'react-icons/fa';
 import '../style/Home.css'

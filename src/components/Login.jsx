@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import '../style/Login.css';
+import {AiOutlineEye } from 'react-icons/ai';
 
 const Login = () => {
     const [sign, setSign] = useState(false);
@@ -16,7 +17,7 @@ const Login = () => {
                             <p className='log__text'>Already a member! <span onClick={() => setSign(false)} style={{color:'white', cursor:'pointer',}}>sign in now</span></p>
                             <input type='text' placeholder='Full Name' className="name__field"/>
                             <input type='text' placeholder='Email Address' className="email__field"/>
-                            <input type='passWord' placeholder='Password' minlength="8" className="password__field"/>
+                            <input type='passWord' placeholder='Password' min className="password__field"/>
                             <p className="password__instruction">At least 8 characters, letters and numbers</p>
                             <button className="sign__btn">Sign Up</button>
                           </>
