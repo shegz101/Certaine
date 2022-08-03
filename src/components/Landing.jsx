@@ -17,7 +17,7 @@ const Landing = () => {
                   <h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px'}} className='header-text'>Certaine</h1>
                </div>
                <div>
-                  <Link to="/login"><button className='connect-button' style={{border:'1px solid transparent'}}>Connect Wallet</button></Link>
+                  <button className='connect-button' style={{border:'1px solid transparent'}}>Connect Wallet</button>
                   <ToastContainer />
                </div>
            </div>
