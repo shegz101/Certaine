@@ -27,7 +27,7 @@ const Landing = () => {
                   <h1 style={{color:'white', fontSize:'55px',width:'50%',}}>Make instant NFT Certificate Builder Platform</h1>
                   <p style={{color:'hsla(0,0%,100%,.5)', fontSize:'25px', width:'45%',}}>It takes seconds to upload certificate and create an NFT certificate on Certaine. Easily Connect your Wallet. Send NFT to any address.</p>
                   <>
-                    <Link to="/login"><button className='sign-button' style={{marginTop:'20px',width:'8rem', border:'1px solid transparent'}}>Get Started</button></Link>
+                    <Link to="/login"><button className='new__button' style={{marginTop:'20px', border:'1px solid transparent'}}>New to Certaine</button></Link>
                     <button onClick={notify} className='sign-button' style={{marginTop:'20px', width:'8rem', marginLeft:'4rem', border:'1px solid transparent'}}>Explore</button>
                   </>
               </div>

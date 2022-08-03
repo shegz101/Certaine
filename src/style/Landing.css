@@ -26,5 +26,18 @@
     color: white;
     line-height: 32px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 10px;
+}
+
+.new__button {
+    background: -webkit-linear-gradient(left, #60c657, #35aee2);
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite;
+    height: 40px;
+    font-size: 17px;
+    width: max-content;
+    color: white;
+    line-height: 32px;
+    cursor: pointer;
+    border-radius: 10px
 }
