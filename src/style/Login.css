@@ -1,27 +1,18 @@
 .login-section {
-    display: flex;
-    flex-direction: row;
+    display: block;
     width: 100%;
     height: 100vh;
+    text-align: center;
+    justify-content: center;
     overflow-y: hidden;
 }
 
-.login__image {
-    width: 50%;
-    height: 100vh;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ31a0mVKl169eXdxZq26NH9xCOER0oFWenSQ&usqp=CAU');
-    background-size: cover;
-    background-position: center center;
-}
-
 .login__input {
-    width: 50%;
+    width: 100%;
     height: 100vh;
     margin-top: 90px;
-    text-align: center;
-    justify-content: center;
-    /* background-color: white; */
 }
+
 
 .sign__text {
     color: white;
@@ -38,7 +29,7 @@
     line-height: 4;
     size: 50;
     width: 400px;
-    margin-top: 40px;
+    margin-top: 50px;
     text-decoration: none;
     outline: none;
     border-top: none;
@@ -57,7 +48,7 @@
     height: 40px;
     line-height: 1;
     width: 400px;
-    margin-top: 45px;
+    margin-top: 55px;
     text-decoration: none;
     outline: none;
     border-top: none;
@@ -72,17 +63,6 @@
 ::placeholder {
     color: black;
 }
-
-/* .password__field {
-   
-}
-
-.password__instruction {
-    margin-left: 140px;
-    color:hsla(0,0%,100%,.5);
-    font-size: 13px;
-    text-align: start;
-} */
 
 .sign__btn {
     height: 50px;
