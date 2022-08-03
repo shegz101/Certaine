@@ -11,8 +11,10 @@ const Login = () => {
             <div className='login__input'>
                <h1 className="sign__text">Sign Up</h1>
                <p className='log__text'>New to Certaine? <span style={{color:'white', }}>sign up now</span></p>
-               <input type='text' placeholder='Name' className="email__field"/>
-               <input type='text' placeholder='Description' className="password__field"/>
+               <input type='text' placeholder='Name' className="name__field"/>
+               <form class="my-form">
+                    <textarea className="description__field"  name="msg" rows="5" cols="50" placeholder="Description"></textarea>
+               </form>
                <Link to="/home"><button className="sign__btn">Sign Up</button></Link>       
             </div>
         </div>

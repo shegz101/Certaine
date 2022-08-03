@@ -49,28 +49,9 @@
     background-color: #fff;
 }
 
-.email__field {
+.description__field {
     height: 40px;
-    line-height: 4;
-    size: 50;
-    width: 400px;
-    margin-top: 40px;
-    text-decoration: none;
-    outline: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-    border-radius: 10px;
-    background-color: #fff;
-}
-
-::placeholder {
-    color: black;
-}
-
-.password__field {
-    height: 40px;
+    line-height: 1;
     width: 400px;
     margin-top: 45px;
     text-decoration: none;
@@ -80,7 +61,15 @@
     border-right: none;
     border-bottom: none;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #fff; 
+}
+
+::placeholder {
+    color: black;
+}
+
+/* .password__field {
+   
 }
 
 .password__instruction {
@@ -88,7 +77,7 @@
     color:hsla(0,0%,100%,.5);
     font-size: 13px;
     text-align: start;
-}
+} */
 
 .sign__btn {
     height: 50px;
