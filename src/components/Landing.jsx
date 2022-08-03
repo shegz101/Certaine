@@ -8,7 +8,7 @@ import land from '../landing.png';
 import '../style/Landing.css';
 
 const Landing = () => {
-    const notify = () => toast("Please sign up!");
+    const notify = () => toast("Please Connect Wallet!");
     return (
         <div className='landing__page__section'>
             <div className='header-section'> 
@@ -17,7 +17,7 @@ const Landing = () => {
                   <h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px'}} className='header-text'>Certaine</h1>
                </div>
                <div>
-                  <Link to="/login"><button className='sign-button' style={{border:'1px solid transparent'}}>Sign In</button></Link>
+                  <Link to="/login"><button className='connect-button' style={{border:'1px solid transparent'}}>Connect Wallet</button></Link>
                   <ToastContainer />
                </div>
            </div>
