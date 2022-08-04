@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { ethers } from "ethers";
 import 'react-toastify/dist/ReactToastify.css';
 import '../style/Header.css';
 import { Link } from "react-router-dom";
@@ -9,7 +10,55 @@ import '../style/Landing.css';
 
 const Landing = () => {
     const notify = () => toast("Please Connect Wallet!");
-    return (
+     // usetstate for storing and retrieving wallet details
+    const [data, setData] = useState({
+      address:'',
+      Balance: null,
+    })
+
+    // Button handler button for handling a
+    // request event for metamask
+    const btnhandler = () => {
+      // Checking if metamask is already present or not
+      if (window.ethereum) {
+        // res[0] for fetching a first wallet
+        window.ethereum
+          .request({ method: "eth_requestAccounts" })
+          .then((res) => accountChangeHandler(res[0]));
+      } else {
+        alert("install metamask extension!!");
+      }
+    };
+
+    // getbalance function for getting a balance in
+    // a right format with help of ethers
+    const getbalance = (address) => {
+      // Requesting balance method
+      window.ethereum
+        .request({ 
+          method: "eth_getBalance", 
+          params: [address, "latest"] 
+        })
+        .then((balance) => {
+          // Setting balance
+          setData({
+            Balance: ethers.utils.formatEther(balance),
+          });
+        });
+    };
+
+    // Function for handling all events
+    const accountChangeHandler = (account) => {
+      // Setting an address data
+      setData({
+        address: account,
+      });
+    
+      // Setting a balance
+      getbalance(account);
+    };
+      
+ return (
         <div className='landing__page__section'>
             <div className='header-section'> 
                <div className='header__logo'>
@@ -17,7 +66,7 @@ const Landing = () => {
                   <h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px'}} className='header-text'>Certaine</h1>
                </div>
                <div>
-                  <button className='connect-button' style={{border:'1px solid transparent'}}>Connect Wallet</button>
+                  <button className='connect-button' onClick={btnhandler} style={{border:'1px solid transparent'}}>Connect Wallet</button>
                   <ToastContainer />
                </div>
            </div>
