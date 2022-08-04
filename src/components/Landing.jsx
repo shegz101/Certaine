@@ -5,11 +5,21 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../style/Header.css';
 import { Link } from "react-router-dom";
 import logo from '../logo.jpg';
+import meta from '../metamask.png';
 import land from '../landing.png'; 
 import '../style/Landing.css';
 
 const Landing = () => {
     const notify = () => toast("Please Connect Wallet!");
+    const [isOpen, setIsOpen] = useState(false);
+    const openModal = () => {
+      setIsOpen(true);
+    }
+  
+    const closeModal = () => {
+      setIsOpen(false);
+    }
+  
      // usetstate for storing and retrieving wallet details
     const [data, setData] = useState({
       address:'',
@@ -60,16 +70,29 @@ const Landing = () => {
       
  return (
         <div className='landing__page__section'>
-            <div className='header-section'> 
-               <div className='header__logo'>
-                  <span><img src={logo} style={{fontSize:'20px',height:'28px',marginTop:'20px',lineHeight:'2.4',}}alt="certaine-logo"/></span>
-                  <Link to="/" style={{textDecoration:'none', outline:'none',}}><h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px', cursor:'pointer'}} className='header-text'>Certaine</h1></Link>
-               </div>
-               <div>
-                  <button className='connect-button' onClick={btnhandler} style={{border:'1px solid transparent'}}>Connect Wallet</button>
-                  <ToastContainer />
-               </div>
-           </div>
+          {isOpen && (
+         <>
+          <div className="overlay"></div>
+          <div className="modal"  onClick={btnhandler}>
+            <main className="modal__main">
+              <button onClick={closeModal} className="close-button">&times;</button>
+              <img src={meta} alt="metamask logo"  onClick={btnhandler} style={{fontSize:'20px',height:'78px',marginTop:'20px',lineHeight:'5.4',}}/>
+              <h1 style={{fontWeight:'900', fontSize:'60px', color:'white'}}>Metamask</h1>
+              <p style={{color:'hsla(0,0%,100%,.5)', fontSize:'25px', fontWeight:'600',}}>Connect to your Metamask Wallet</p>
+            </main>
+          </div>
+         </>
+       )}
+          <div className='header-section'> 
+              <div className='header__logo'>
+                <span><img src={logo} style={{fontSize:'20px',height:'28px',marginTop:'20px',lineHeight:'2.4',}}alt="certaine-logo"/></span>
+                <Link to="/" style={{textDecoration:'none', outline:'none',}}><h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px', cursor:'pointer'}} className='header-text'>Certaine</h1></Link>
+              </div>
+              <div>
+                <button className='connect-button' onClick={openModal} style={{border:'1px solid transparent'}}>Connect Wallet</button>
+                <ToastContainer />
+              </div>
+          </div>
 
            <div className='main__landing__section'>
               <div className='landing__text'>
@@ -82,7 +105,7 @@ const Landing = () => {
               </div>
               <div className='landing__image'>
                 <img src={land} style={{height:'500px', marginTop:'28px', marginLeft:'-600px'}} alt='Landing Page'/>
-              </div>
+              </div> 
            </div>
         </div>
     )
