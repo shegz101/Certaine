@@ -63,7 +63,7 @@ const Landing = () => {
             <div className='header-section'> 
                <div className='header__logo'>
                   <span><img src={logo} style={{fontSize:'20px',height:'28px',marginTop:'20px',lineHeight:'2.4',}}alt="certaine-logo"/></span>
-                  <h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px'}} className='header-text'>Certaine</h1>
+                  <Link to="/" style={{textDecoration:'none', outline:'none',}}><h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px', cursor:'pointer'}} className='header-text'>Certaine</h1></Link>
                </div>
                <div>
                   <button className='connect-button' onClick={btnhandler} style={{border:'1px solid transparent'}}>Connect Wallet</button>
@@ -73,8 +73,8 @@ const Landing = () => {
 
            <div className='main__landing__section'>
               <div className='landing__text'>
-                  <h1 style={{color:'white', fontSize:'55px',width:'50%',}}>Make instant NFT Certificate Builder Platform</h1>
-                  <p style={{color:'hsla(0,0%,100%,.5)', fontSize:'25px', width:'45%',}}>It takes seconds to upload certificate and create an NFT certificate on Certaine. Easily Connect your Wallet. Send NFT to any address.</p>
+                  <h1 style={{color:'white', fontSize:'55px',width:'60%',}}>Make instant NFT Certificate Builder Platform</h1>
+                  <p style={{color:'hsla(0,0%,100%,.5)', fontSize:'25px', width:'65%',}}>It takes seconds to upload certificate and create an NFT certificate on Certaine. Easily Connect your Wallet. Send NFT to any address.</p>
                   <>
                     <Link to="/login"><button className='new__button' style={{marginTop:'20px', border:'1px solid transparent'}}>New to Certaine</button></Link>
                     <button onClick={notify} className='sign-button' style={{marginTop:'20px', width:'8rem', marginLeft:'4rem', border:'1px solid transparent'}}>Explore</button>

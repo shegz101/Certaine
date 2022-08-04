@@ -35,6 +35,7 @@
     animation: gradient-animation 4s ease infinite;
     height: 40px;
     font-size: 17px;
+    font-weight: 700;
     width: max-content;
     color: white;
     line-height: 32px;
