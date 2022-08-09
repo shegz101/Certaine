@@ -6,7 +6,7 @@ import '../style/Header.css';
 import { Link } from "react-router-dom";
 import logo from '../logo.jpg';
 import meta from '../metamask.png';
-import land from '../landing.png'; 
+// import land from '../landing.png'; 
 import { FiUpload }from 'react-icons/fi';
 import { AiOutlineFileAdd } from 'react-icons/ai';
 import { MdOutlineFormatColorReset } from 'react-icons/md'
@@ -16,7 +16,9 @@ const Landing = (props) => {
     // const notify = () => toast("Please Connect Wallet!");
     const [isOpen, setIsOpen] = useState(false);
     const [activerow, setActiveRow] = useState(true);
+    const [newrow, setNewRow] = useState(false);
     const [explore, setExplore] = useState(false);
+    const [signmodal, setSignModal] = useState(false);
 
     const hiddenFileInput = useRef(null);
     const handleClick = event => {
@@ -142,11 +144,38 @@ const Landing = (props) => {
                      </div>
                     )
                   }
-                  <button className='add__row__btn'>+ Add Row</button>
+
+                  {
+                    newrow && (
+                      <div className='property__line'>
+                       <div><input type='text' className='property__name' placeholder='trait_type'/></div>
+                       <div><input type='text' className='property__name' placeholder='value'/></div>
+                       <div><p onClick={() => setNewRow(false)} style={{paddingTop:'5px', color:'hsla(0,0%,100%,.5)'}}>x</p></div>
+                     </div>
+                    )
+                  }
+                  <button className='add__row__btn' onClick={() => setNewRow(true)}>+ Add Row</button>
                 </div>
               </main>
             </div>
           </>
+            )
+          }
+
+          {
+            signmodal && (
+            <>
+              <div className="overlay"></div>
+              <div className='login__modal'>
+               <button onClick={() => setSignModal(false)} className="close-button">&times;</button>
+               <h1 className="sign__text">Sign Up</h1>
+               <input type='text' placeholder='Name' className="name__field"/>
+               <form class="my-form">
+                  <textarea className="description-field"  name="msg" rows="5" cols="50" placeholder="Description"></textarea>
+               </form>
+               <button className="sign__btn">Sign Up</button>      
+              </div>
+            </>
             )
           }
           <div className='header-section'> 
@@ -162,16 +191,13 @@ const Landing = (props) => {
 
            <div className='main__landing__section'>
               <div className='landing__text'>
-                  <h1 style={{color:'white', fontSize:'55px',width:'60%',}}>Make instant NFT Certificate Builder Platform</h1>
-                  <p style={{color:'hsla(0,0%,100%,.5)', fontSize:'25px', width:'65%',}}>It takes seconds to upload certificate and create an NFT certificate on Certaine. Easily Connect your Wallet. Send NFT to any address.</p>
-                  <>
-                    <Link to="/login"><button className='new__button' style={{marginTop:'20px', border:'1px solid transparent'}}>New to Certaine</button></Link>
+                  <h1 style={{color:'white', fontSize:'55px', width:'100%'}}>Make instant NFT Certificate Builder Platform</h1>
+                  <p className='descrp__txt' style={{color:'hsla(0,0%,100%,.5)', width:'600px',}}>It takes seconds to upload certificate and create an NFT certificate on Certaine. Easily Connect your Wallet. Send NFT to any address.</p>
+                  <div>
+                    <button className='new__button' onClick={() => setSignModal(true)} style={{marginTop:'20px', border:'1px solid transparent'}}>New to Certaine</button>
                     <button onClick={() => setExplore(true)} className='sign-button' style={{marginTop:'20px', width:'8rem', marginLeft:'4rem', border:'1px solid transparent'}}>Explore</button>
-                  </>
+                  </div>
               </div>
-              <div className='landing__image'>
-                <img src={land} style={{height:'500px', marginTop:'28px', marginLeft:'-600px'}} alt='Landing Page'/>
-              </div> 
            </div>
         </div>
     )
