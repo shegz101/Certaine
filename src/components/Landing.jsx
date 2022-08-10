@@ -207,7 +207,7 @@ const Landing = (props) => {
 
            <div className='main__landing__section'>
               <div className='landing__text'>
-                  <h1 className='head__txt' style={{color:'white', fontSize:'55px', width:'70%',}}>Instant NFT Certificate Builder Platform</h1>
+                  <h1 className='head__txt' style={{color:'white', fontSize:'60px', width:'70%',}}>Upload & Build NFT Certificate Easily</h1>
                   <p className='descrp__txt' style={{color:'hsla(0,0%,100%,.5)', width:'70%',}}>It takes seconds to upload certificate and create an NFT certificate on Certaine. Easily Connect your Wallet. Send NFT to any address.</p>
                   <div>
                     <button className='new__button' onClick={() => setSignModal(true)} style={{marginTop:'20px', border:'1px solid transparent'}}>New to Certaine</button>
