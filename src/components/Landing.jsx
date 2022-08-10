@@ -1,4 +1,4 @@
-import React, {useState,useEffect, useRef} from 'react';
+import React, {useState,useRef} from 'react';
 // import { ToastContainer, toast } from 'react-toastify';
 import { ethers } from "ethers";
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,11 +14,34 @@ import '../style/Landing.css';
 
 const Landing = (props) => {
     // const notify = () => toast("Please Connect Wallet!");
-    const [isOpen, setIsOpen] = useState(false);
-    const [activerow, setActiveRow] = useState(true);
-    const [newrow, setNewRow] = useState(false);
+    const defaultRow = { firstName:'', lastName:'' };
+    const [isOpen, setIsOpen] = useState(false)
+    //state to add new row fro properties
+    const [newrowinput, setNewRowInput] = useState([defaultRow]);
     const [explore, setExplore] = useState(false);
     const [signmodal, setSignModal] = useState(false);
+
+    //function to handle put onchange
+    const handleInputChange = (event, index) => {
+      const {name, value} = event.target;
+      const propertyList = [...newrowinput];
+      propertyList[index][name] = value;
+      //set the propertyList to the newrowinput
+      setNewRowInput(propertyList);
+    }
+
+    //functn that triggers the btn to remove a row.
+    const removeRow = (index) => {
+      //define the list
+      const propertyList = [...newrowinput];
+      propertyList.splice(index,1) //this line deletes that particular row, by targeting the exact index
+      setNewRowInput(propertyList);
+    }
+
+    //function to add a new row
+    const addRow = () => {
+      setNewRowInput([...newrowinput, defaultRow]);
+    }
 
     const hiddenFileInput = useRef(null);
     const handleClick = event => {
@@ -83,11 +106,7 @@ const Landing = (props) => {
       // Setting a balance
       getbalance(account);
     };
-  useEffect(() => {
-    setActiveRow(true);
-  }, [])
-  
-      
+       
  return (
         <div className='landing__page__section'>
           {isOpen && (
@@ -134,27 +153,24 @@ const Landing = (props) => {
                     <p style={{fontWeight:'400', fontSize:'13px', color:'white', paddingTop:'20px',}}>Properties</p>
                     <button className='reset__btn'>Reset <span><MdOutlineFormatColorReset style={{paddingTop:'3px',}}/></span></button>
                   </div>
-
                   {
-                    activerow && (
-                      <div className='property__line'>
-                       <div><input type='text' className='property__name' placeholder='trait_type'/></div>
-                       <div><input type='text' className='property__name' placeholder='value'/></div>
-                       <div><p onClick={() => setActiveRow(false)} style={{paddingTop:'5px', color:'hsla(0,0%,100%,.5)'}}>x</p></div>
-                     </div>
-                    )
+                    newrowinput.map((x, id) => {
+                      return (
+                      <>
+                        <div className='property__line'>
+                          <div> 
+                             <input type='text' className='property__name' placeholder='trait_type' onChange={event => handleInputChange(event,id)}/>
+                          </div>
+                          <div>
+                            <input type='text' className='property__name' placeholder='value' onChange={event => handleInputChange(event,id)}/>
+                          </div>
+                          <div><p onClick={() => removeRow(id)} style={{paddingTop:'5px', color:'hsla(0,0%,100%,.5)'}}>x</p></div>
+                        </div>
+                      </>
+                      )
+                    })
                   }
-
-                  {
-                    newrow && (
-                      <div className='property__line'>
-                       <div><input type='text' className='property__name' placeholder='trait_type'/></div>
-                       <div><input type='text' className='property__name' placeholder='value'/></div>
-                       <div><p onClick={() => setNewRow(false)} style={{paddingTop:'5px', color:'hsla(0,0%,100%,.5)'}}>x</p></div>
-                     </div>
-                    )
-                  }
-                  <button className='add__row__btn' onClick={() => setNewRow(true)}>+ Add Row</button>
+                  <button className='add__row__btn' onClick={addRow}>+ Add Row</button>
                 </div>
               </main>
             </div>
