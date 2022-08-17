@@ -131,7 +131,7 @@ const Landing = (props) => {
               <main className="explore__main">
                 <p style={{fontWeight:'900', fontSize:'20px', color:'white'}}>Mint new Certificate</p>
                 <p style={{fontWeight:'600', fontSize:'15px', color:'white', paddingTop:'20px',}}>Metadata</p>
-                <hr style={{marginTop:'10px', width:'350px', color:'hsla(0,0%,100%,.5)', opacity:'0.05',}}/>
+                <hr style={{marginTop:'10px', width:'550px', color:'hsla(0,0%,100%,.5)', opacity:'0.05',}}/>
                 <p style={{fontWeight:'400', fontSize:'13px', color:'white', paddingTop:'20px',}}>Name <span style={{color:'red'}}>*</span></p>
                 <input type='text' className='explore__name' placeholder='Name'/>
                 <p style={{fontWeight:'600', fontSize:'15px', color:'white', paddingTop:'20px',}}>Media</p>
@@ -171,6 +171,7 @@ const Landing = (props) => {
                     })
                   }
                   <button className='add__row__btn' onClick={addRow}>+ Add Row</button>
+                  <button className='submit__btn'>Submit</button>
                 </div>
               </main>
             </div>

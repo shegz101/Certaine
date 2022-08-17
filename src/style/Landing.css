@@ -1,3 +1,7 @@
+.landing__page__section {
+    height: 100%;
+}
+
 .main__landing__section {
     display: block;
     overflow-x:hidden;
@@ -89,16 +93,16 @@
 }
 
 .explore_modal {
-    position: fixed;
+    position: absolute;
     z-index: 20;
     background: #1a202c;
-    width: 400px;
+    width: 600px;
     height:max-content;
     border-radius: 12px;
     cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     /* Center the modal */
     top: 50%;
     left: 50%;
@@ -135,7 +139,7 @@
     height: 40px;
     line-height: 4;
     size: 50;
-    width: 360px;
+    width: 540px;
     margin-top: 8px;
     text-decoration: none;
     outline: none;
@@ -180,7 +184,7 @@
 .description__field {
     height: 60px;
     line-height: 1;
-    width: 360px;
+    width: 540px;
     margin-top: 10px;
     text-decoration: none;
     outline: none;
@@ -217,7 +221,7 @@
 }
 
 .property__name {
-    width: 170px;
+    width: 250px;
     height: 30px;
     text-decoration: none;
     outline: none;
@@ -246,7 +250,21 @@
     border-left: none;
     border-right: none;
     border-bottom: none;
-    
+}
+
+.submit__btn {
+    margin-top: 15px;
+    height: 35px;
+    width: 540px;
+    color: white;
+    background: -webkit-linear-gradient(left, #60c657, #35aee2);
+    text-decoration: none;
+    border-radius: 10px;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
 }
 
 .login__input {
