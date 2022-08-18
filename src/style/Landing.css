@@ -80,7 +80,7 @@
     z-index: 20;
     background: #1a202c;
     width: 500px;
-    height:40vh;
+    height:max-content;
     border-radius: 12px;
     text-align: center;
     align-items: center;
@@ -90,6 +90,23 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.modal__main {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+    /* width: 410px; */
+}
+
+.modal__main:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
 }
 
 .explore_modal {

@@ -1,11 +1,14 @@
 import React, {useState,useRef} from 'react';
 // import { ToastContainer, toast } from 'react-toastify';
 import { ethers } from "ethers";
-import 'react-toastify/dist/ReactToastify.css';
+//integrating sequence wallet
+import { sequence } from "0xsequence";
+// import 'react-toastify/dist/ReactToastify.css';
 import '../style/Header.css';
 import { Link } from "react-router-dom";
 import logo from '../logo.jpg';
 import meta from '../metamask.png';
+import sequence_logo from '../sequence-logo.svg'
 // import land from '../landing.png'; 
 import { FiUpload }from 'react-icons/fi';
 import { AiOutlineFileAdd } from 'react-icons/ai';
@@ -18,6 +21,7 @@ const Landing = (props) => {
     const [isOpen, setIsOpen] = useState(false)
     //state to add new row fro properties
     const [newrowinput, setNewRowInput] = useState([]);
+    const [sequenceconnected, setSequenceConnected] = useState(false);
     const [explore, setExplore] = useState(false);
     const [signmodal, setSignModal] = useState(false);
 
@@ -106,7 +110,37 @@ const Landing = (props) => {
       // Setting a balance
       getbalance(account);
     };
-       
+
+    //sequence wallet Setup
+    async function connectWallet() {
+      sequence.initWallet('polygon');
+
+      const user_wallet = await sequence.getWallet();
+      
+      const connectDetails = await user_wallet.connect({
+        app: 'Certaine',
+        authorize: true,
+        // And pass settings if you would like to customize further
+        settings: {
+          theme: "light",
+          bannerUrl: "https://yoursite.com/banner-image.png",  // 3:1 aspect ratio, 1200x400 works best
+          includedPaymentProviders: ["moonpay", "ramp"],
+          defaultFundingCurrency: "matic",
+          lockFundingCurrencyToDefault: false,
+        }
+      })
+
+      user_wallet.openWallet();
+      
+      if (connectDetails.connected === true) {
+        setSequenceConnected(true)
+      } else {
+        setSequenceConnected(false)
+      }
+    }
+    const address = await user_wallet.getAddress();
+    console.log(address); 
+        
  return (
         <div className='landing__page__section'>
           {isOpen && (
@@ -118,6 +152,11 @@ const Landing = (props) => {
                 <img src={meta} alt="metamask logo"  onClick={btnhandler} style={{fontSize:'20px',height:'78px',marginTop:'20px',lineHeight:'5.4',}}/>
                 <h1 style={{fontWeight:'900', fontSize:'60px', color:'white'}}>Metamask</h1>
                 <p onClick={btnhandler} style={{color:'hsla(0,0%,100%,.5)', fontSize:'25px', fontWeight:'600',}}>Connect to your Metamask Wallet</p>
+              </main>
+              <main className="modal__main">
+                <img src={sequence_logo} alt="metamask logo" onClick={connectWallet} style={{fontSize:'20px',height:'78px',marginTop:'20px',lineHeight:'5.4',}}/>
+                <h1 style={{fontWeight:'900', fontSize:'60px', color:'white'}}>Sequence</h1>
+                <p style={{color:'hsla(0,0%,100%,.5)', fontSize:'25px', fontWeight:'600',}}>Connect to your Sequence Wallet</p>
               </main>
             </div>
            </>
@@ -203,7 +242,7 @@ const Landing = (props) => {
                 <Link to="/" style={{textDecoration:'none', outline:'none',}}><h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px', cursor:'pointer'}} className='header-text'>Certaine</h1></Link>
               </div>
               <div>
-                <button className='connect-button' onClick={openModal} style={{border:'1px solid transparent'}}>Connect Wallet</button>
+                <button className='connect-button' onClick={openModal} style={{border:'1px solid transparent'}}>{setSequenceConnected ? {address} : 'Connect Wallet'}</button>
                 {/* <ToastContainer /> */}
               </div>
           </div>
