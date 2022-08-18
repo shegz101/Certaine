@@ -112,11 +112,10 @@ const Landing = (props) => {
     };
 
     //sequence wallet Setup
-    async function connectWallet() {
-      sequence.initWallet('polygon');
+    sequence.initWallet('polygon');
 
-      const user_wallet = await sequence.getWallet();
-      
+    const user_wallet = sequence.getWallet();
+    async function connectWallet() {
       const connectDetails = await user_wallet.connect({
         app: 'Certaine',
         authorize: true,
@@ -138,7 +137,7 @@ const Landing = (props) => {
         setSequenceConnected(false)
       }
     }
-    const address = await user_wallet.getAddress();
+    const address = user_wallet.getAddress();
     console.log(address);
     const minimize_address = `${address?.slice(0, 6)}..${address?.slice(-4)}`; 
 
@@ -243,7 +242,7 @@ const Landing = (props) => {
                 <Link to="/" style={{textDecoration:'none', outline:'none',}}><h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px', cursor:'pointer'}} className='header-text'>Certaine</h1></Link>
               </div>
               <div>
-                <button className='connect-button' onClick={openModal} style={{border:'1px solid transparent'}}>{setSequenceConnected ? {minimize_address} : 'Connect Wallet'}</button>
+                <button className='connect-button' onClick={openModal} style={{border:'1px solid transparent'}}>{sequenceconnected ? {minimize_address} : 'Connect Wallet'}</button>
                 {/* <ToastContainer /> */}
               </div>
           </div>
