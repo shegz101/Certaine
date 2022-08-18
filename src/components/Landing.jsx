@@ -14,10 +14,10 @@ import '../style/Landing.css';
 
 const Landing = (props) => {
     // const notify = () => toast("Please Connect Wallet!");
-    const defaultRow = { firstName:'', lastName:'' };
+    // const defaultRow = { firstName:'', lastName:'' };
     const [isOpen, setIsOpen] = useState(false)
     //state to add new row fro properties
-    const [newrowinput, setNewRowInput] = useState([defaultRow]);
+    const [newrowinput, setNewRowInput] = useState([]);
     const [explore, setExplore] = useState(false);
     const [signmodal, setSignModal] = useState(false);
 
@@ -40,7 +40,7 @@ const Landing = (props) => {
 
     //function to add a new row
     const addRow = () => {
-      setNewRowInput([...newrowinput, defaultRow]);
+      setNewRowInput([...newrowinput, []]);
     }
 
     const hiddenFileInput = useRef(null);
@@ -132,8 +132,10 @@ const Landing = (props) => {
                 <p style={{fontWeight:'900', fontSize:'20px', color:'white'}}>Mint new Certificate</p>
                 <p style={{fontWeight:'600', fontSize:'15px', color:'white', paddingTop:'20px',}}>Metadata</p>
                 <hr style={{marginTop:'10px', width:'550px', color:'hsla(0,0%,100%,.5)', opacity:'0.05',}}/>
-                <p style={{fontWeight:'400', fontSize:'13px', color:'white', paddingTop:'20px',}}>Name <span style={{color:'red'}}>*</span></p>
-                <input type='text' className='explore__name' placeholder='Name'/>
+                <p style={{fontWeight:'400', fontSize:'13px', color:'white', paddingTop:'20px',}}>Name<span style={{color:'red'}}>*</span></p>
+                <input type='text' className='explore__name' placeholder='Name of Certificate' required/>
+                <p style={{fontWeight:'400', fontSize:'13px', color:'white', paddingTop:'20px',}}>Address<span style={{color:'red'}}>*</span></p>
+                <input type='text' className='explore__name' placeholder='Add Receiver Address' required/>
                 <p style={{fontWeight:'600', fontSize:'15px', color:'white', paddingTop:'20px',}}>Media</p>
                 <div className='upload__section'>
                   <div className='upload__nav'>
@@ -141,13 +143,13 @@ const Landing = (props) => {
                     <div><p style={{fontWeight:'600', fontSize:'15px', color:'hsla(0,0%,100%,.5)',}}>Upload File</p></div>
                   </div>
                   <div>
-                    <input type="file" ref={hiddenFileInput} style={{display:'none'}} />
+                    <input type="file" ref={hiddenFileInput} style={{display:'none'}} required/>
                     <button className='upload__btn' onClick={handleClick} onChange={handleChange}> <span style={{paddingTop:'20px', color:'hsla(0,0%,100%,.5)'}}><AiOutlineFileAdd style={{paddingTop:'5px',}}/></span> Select File</button>
                   </div>
                 </div>
-                <p style={{fontSize:'12px', paddingTop:'10px' ,color:'hsla(0,0%,100%,.5)',}}>You can upload image, audio, video, text, pdf, and 3D model files here.</p>
+                <p style={{fontSize:'12px', paddingTop:'10px' ,color:'hsla(0,0%,100%,.5)',}}>File Supported: PNG, JPG.</p>
                 <p style={{fontWeight:'400', fontSize:'13px', color:'white', paddingTop:'20px',}}>Description</p>
-                <textarea className="description__field"  name="msg" rows="5" cols="50"></textarea>
+                <textarea className="description__field"  name="msg" rows="5" cols="50" required></textarea>
                 <div className="properties__section">
                   <div className="properties__nav">
                     <p style={{fontWeight:'400', fontSize:'13px', color:'white', paddingTop:'20px',}}>Properties</p>
@@ -159,10 +161,10 @@ const Landing = (props) => {
                       <>
                         <div className='property__line'>
                           <div> 
-                             <input type='text' className='property__name' placeholder='trait_type' onChange={event => handleInputChange(event,id)}/>
+                             <input type='text' className='property__name' placeholder='trait_type' onChange={event => handleInputChange(event,id)} required/>
                           </div>
                           <div>
-                            <input type='text' className='property__name' placeholder='value' onChange={event => handleInputChange(event,id)}/>
+                            <input type='text' className='property__name' placeholder='value' onChange={event => handleInputChange(event,id)} required/>
                           </div>
                           <div><p onClick={() => removeRow(id)} style={{paddingTop:'5px', color:'hsla(0,0%,100%,.5)'}}>x</p></div>
                         </div>

@@ -94,6 +94,7 @@
 
 .explore_modal {
     position: absolute;
+    margin-top: 40px;
     z-index: 20;
     background: #1a202c;
     width: 600px;
