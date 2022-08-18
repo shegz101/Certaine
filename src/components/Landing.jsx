@@ -139,8 +139,9 @@ const Landing = (props) => {
       }
     }
     const address = await user_wallet.getAddress();
-    console.log(address); 
-        
+    console.log(address);
+    const minimize_address = `${address?.slice(0, 6)}..${address?.slice(-4)}`; 
+
  return (
         <div className='landing__page__section'>
           {isOpen && (
@@ -242,7 +243,7 @@ const Landing = (props) => {
                 <Link to="/" style={{textDecoration:'none', outline:'none',}}><h1 style={{color:'white', paddingTop:'20px', paddingLeft:'10px', cursor:'pointer'}} className='header-text'>Certaine</h1></Link>
               </div>
               <div>
-                <button className='connect-button' onClick={openModal} style={{border:'1px solid transparent'}}>{setSequenceConnected ? {address} : 'Connect Wallet'}</button>
+                <button className='connect-button' onClick={openModal} style={{border:'1px solid transparent'}}>{setSequenceConnected ? {minimize_address} : 'Connect Wallet'}</button>
                 {/* <ToastContainer /> */}
               </div>
           </div>
