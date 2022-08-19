@@ -194,7 +194,7 @@ const Landing = (props) => {
       "linkReferences": {},
       "deployedLinkReferences": {}
     }; // copy the contract ABI here
-    const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
+    const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
     function contractInteraction() {
       const contractAddress = '0x2Bc7A39c22403dA3617b237D42BF0db2C5dcaBA1'
       const connectedContract = new ethers.Contract(contractAddress, Greeter.abi, provider);
